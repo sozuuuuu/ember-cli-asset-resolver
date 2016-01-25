@@ -1,6 +1,29 @@
 # Ember-cli-asset-resolver
 
-This README outlines the details of collaborating on this Ember addon.
+An ember addon that resolves digested assets in the `/public` directory.
+
+You must enable to generate the asset map by editing `ember-cli-build.js`.
+
+```
+module.exports = function(defaults) {
+  var app = new EmberApp(defaults, {
+    fingerprint: {
+      generateAssetMap: true
+    }
+  });
+
+  return app.toTree(appData);
+}
+```
+
+## Usage
+
+Just use the `resolve-asset` helper. 
+
+``` application.hbs
+<h2>Welcome to Ember</h2>
+{{resolve-asset '/path/to/the/asset.jpg'}}
+```
 
 ## Installation
 
